@@ -1,0 +1,394 @@
+{
+  "meta": {
+    "title": "Azure Horizons — Voyages de Luxe",
+    "titleTemplate": "%s · Azure Horizons",
+    "description": "Des voyages cinématographiques vers les destinations les plus extraordinaires du monde. Commencez le voyage avant même de réserver."
+  },
+  "nav": {
+    "destinations": "Destinations",
+    "packages": "Forfaits",
+    "experiences": "Expériences",
+    "about": "À propos",
+    "book": "Réserver un voyage",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "primaryLabel": "Principal",
+    "signIn": "Se connecter",
+    "account": "Compte"
+  },
+  "languageSwitcher": {
+    "label": "Langue",
+    "select": "Choisir la langue"
+  },
+  "hero": {
+    "badge": "Voyages de luxe sur mesure",
+    "title": "Azure Horizons",
+    "subtitle": "Des voyages cinématographiques vers les destinations les plus extraordinaires du monde — commencez le voyage avant de réserver.",
+    "ctaPrimary": "Commencer le voyage",
+    "ctaSecondary": "Explorer les destinations",
+    "cardLabel": "Structure localisée",
+    "cardBody": "Des routes en anglais et en français, une navigation accessible et un défilement fluide respectant les préférences de mouvement — le tout depuis une seule configuration."
+  },
+  "flight": {
+    "eyebrow": "Approche finale",
+    "title": "Les îles se dévoilent",
+    "subtitle": "Ce premier regard par le hublot — l'instant où le voyage cesse d'être un projet pour devenir réel."
+  },
+  "chapters": {
+    "one": {
+      "eyebrow": "L'invitation",
+      "title": "L'horizon vous appelle",
+      "subtitle": "Quelque part entre ici et le bout de la carte, votre prochain voyage vous attend déjà."
+    },
+    "two": {
+      "eyebrow": "S'immerger",
+      "title": "Là où l'eau rejoint le ciel",
+      "subtitle": "Des jours au rythme des marées, et des nuits qui s'étirent à l'infini."
+    },
+    "three": {
+      "eyebrow": "Appartenir",
+      "title": "Chaque voyage devient une histoire",
+      "subtitle": "De celles que l'on raconte pendant des années — arrangées dans le moindre détail."
+    },
+    "four": {
+      "eyebrow": "S'évader",
+      "title": "Quittez l'ordinaire",
+      "subtitle": "Les chemins de traverse, et les lieux que l'on ne veut plus quitter."
+    },
+    "five": {
+      "eyebrow": "À vous",
+      "title": "Commençons votre voyage",
+      "subtitle": "Dites-nous où vous emmène votre imagination — nous nous occupons du reste."
+    }
+  },
+  "footer": {
+    "tagline": "Des voyages cinématographiques, arrangés avec soin.",
+    "explore": "Explorer",
+    "company": "Entreprise",
+    "legal": "Mentions légales",
+    "about": "À propos",
+    "careers": "Carrières",
+    "press": "Presse",
+    "team": "Concepteurs de voyage",
+    "contact": "Contact",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "cookies": "Cookies",
+    "rights": "Tous droits réservés."
+  },
+  "legal": {
+    "privacy": {
+      "title": "Politique de confidentialité",
+      "body": "Nous respectons votre vie privée. Nous ne recueillons que les informations que vous fournissez lors d'une demande ou d'une réservation — nom, e-mail et préférences de voyage — et les utilisons uniquement pour concevoir et organiser votre voyage et vous répondre. Nous ne vendons jamais vos données. Pour accéder à vos informations ou en demander la suppression, contactez-nous à tout moment.\n\nCeci est un modèle — remplacez-le par la politique de confidentialité de votre agence avant la mise en ligne."
+    },
+    "terms": {
+      "title": "Conditions d'utilisation",
+      "body": "En utilisant ce site et en nous contactant ou en réservant, vous acceptez ces conditions. Les demandes ne sont pas contraignantes et aucun paiement n'est requis pour vérifier les disponibilités. Les prix, disponibilités et prestations sont confirmés dans votre proposition écrite ; les réservations, annulations et remboursements suivent les conditions qui y sont indiquées.\n\nCeci est un modèle — remplacez-le par les conditions de votre agence avant la mise en ligne."
+    },
+    "cookies": {
+      "title": "Politique relative aux cookies",
+      "body": "Ce site n'utilise que les cookies nécessaires pour mémoriser votre préférence de langue et assurer son bon fonctionnement. Nous n'utilisons pas de cookies publicitaires ni de traceurs tiers. Vous pouvez effacer les cookies à tout moment dans les paramètres de votre navigateur.\n\nCeci est un modèle — remplacez-le par la politique relative aux cookies de votre agence avant la mise en ligne."
+    }
+  },
+  "notFound": {
+    "title": "Cet horizon est hors de portée",
+    "body": "La page que vous cherchez a dérivé hors de la carte. Reprenons le large vers des eaux familières.",
+    "cta": "Retour à l'accueil"
+  },
+  "error": {
+    "title": "Le voyage a dévié de sa route",
+    "body": "Une erreur inattendue a interrompu votre voyage. Réessayez, et nous reprendrons le large.",
+    "retry": "Réessayer"
+  },
+  "common": {
+    "loading": "Chargement",
+    "skipToContent": "Aller au contenu"
+  },
+  "sections": {
+    "about": {
+      "eyebrow": "Qui nous sommes",
+      "title": "Un studio d'exception pour des voyages extraordinaires",
+      "body": "Azure Horizons est un studio de voyage de luxe. Nous concevons des voyages cinématographiques et profondément personnels vers les lieux les plus remarquables du monde — chaque détail orchestré par un concepteur de voyage dédié, pour qu'il ne vous reste plus qu'à arriver.",
+      "stats": {
+        "years": { "value": "12+", "label": "Années à créer des voyages" },
+        "destinations": { "value": "60+", "label": "Destinations dans le monde" },
+        "journeys": { "value": "2 000+", "label": "Voyages conçus" }
+      }
+    },
+    "enquiry": {
+      "eyebrow": "Commencez ici",
+      "title": "Concevez votre voyage",
+      "subtitle": "Donnez-nous l'essentiel — un concepteur de voyage vous répond sous un jour. Aucun paiement pour demander.",
+      "destination": "Destination",
+      "anyDestination": "Pas encore sûr — surprenez-moi",
+      "travellers": "Voyageurs",
+      "submit": "Envoyer la demande",
+      "sending": "Envoi…",
+      "successTitle": "Votre demande est en route",
+      "successBody": "Un concepteur de voyage vous contactera sous un jour ouvré.",
+      "again": "Envoyer une autre demande",
+      "error": "Une erreur s'est produite. Veuillez réessayer."
+    },
+    "featured": {
+      "eyebrow": "À la une",
+      "title": "Destinations signature",
+      "description": "Une collection choisie des lieux où nos voyageurs reviennent encore et encore."
+    },
+    "explorer": {
+      "eyebrow": "Explorer",
+      "title": "Trouvez votre horizon",
+      "description": "Filtrez selon le type de voyage dont vous rêvez.",
+      "all": "Tous",
+      "empty": "Aucune destination ne correspond à ce filtre pour l'instant."
+    },
+    "packages": {
+      "eyebrow": "Sélection",
+      "title": "Forfaits de voyage populaires",
+      "description": "Des points de départ, chacun façonné pour vous une fois réservé.",
+      "cta": "Voir le forfait"
+    },
+    "testimonials": {
+      "eyebrow": "En leurs mots",
+      "title": "Nos voyageurs témoignent",
+      "description": "Quelques mots de voyages récents."
+    },
+    "faq": {
+      "eyebrow": "Bon à savoir",
+      "title": "Questions fréquentes",
+      "description": "Tout ce qu'il faut savoir avant de commencer."
+    },
+    "contact": {
+      "eyebrow": "Parlez-nous",
+      "title": "Concevez votre voyage",
+      "description": "Dites-nous ce que vous avez en tête et un concepteur de voyage vous recontactera.",
+      "name": "Nom",
+      "email": "E-mail",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer le message",
+      "sending": "Envoi…",
+      "success": "Merci — nous vous recontacterons très bientôt.",
+      "error": "Une erreur s'est produite. Veuillez réessayer."
+    },
+    "newsletter": {
+      "eyebrow": "Restez inspiré",
+      "title": "Rejoignez le journal",
+      "description": "Des nouvelles occasionnelles sur les nouvelles destinations et les ouvertures hors saison.",
+      "placeholder": "vous@exemple.com",
+      "subscribe": "S'abonner",
+      "success": "Vous êtes inscrit.",
+      "error": "Cela n'a pas fonctionné. Vérifiez votre e-mail et réessayez."
+    },
+    "categories": {
+      "eyebrow": "Façons de voyager",
+      "title": "Des voyages selon l'envie",
+      "description": "Quelle que soit votre façon de voyager, il existe un horizon pour vous."
+    },
+    "experiences": {
+      "eyebrow": "Moments signature",
+      "title": "Expériences populaires",
+      "description": "Les moments dont nos voyageurs se souviennent le plus."
+    },
+    "partners": {
+      "eyebrow": "En bonne compagnie",
+      "title": "Nos partenaires",
+      "description": "Nous collaborons avec certains des meilleurs hôtels, compagnies aériennes et guides au monde."
+    },
+    "whyus": {
+      "eyebrow": "Pourquoi Azure Horizons",
+      "title": "Le voyage, sublimé",
+      "description": "La différence se joue dans les détails — et dans ceux qui s'en occupent.",
+      "items": {
+        "tailored": {
+          "title": "Sur mesure",
+          "body": "Chaque itinéraire est conçu selon votre rythme, vos goûts et vos envies."
+        },
+        "access": {
+          "title": "Accès rares",
+          "body": "Ouvertures privées, tables introuvables et portes qui restent fermées à la plupart."
+        },
+        "care": {
+          "title": "Accompagnement complet",
+          "body": "Un concepteur de voyage, joignable à tout moment, anticipant chaque besoin."
+        },
+        "expertise": {
+          "title": "Une vraie expertise",
+          "body": "Des destinations que nous connaissons de première main, pas sur brochure."
+        }
+      }
+    },
+    "gallery": {
+      "eyebrow": "Un aperçu",
+      "title": "La galerie Azure Horizons",
+      "description": "Des scènes de voyages autour du monde."
+    },
+    "browse": {
+      "styleLabel": "Style",
+      "nightsLabel": "Durée",
+      "all": "Tous",
+      "short": "Jusqu'à 4 nuits",
+      "mid": "5–6 nuits",
+      "long": "7+ nuits",
+      "empty": "Aucun forfait ne correspond à ces filtres."
+    },
+    "designers": {
+      "eyebrow": "Les personnes derrière le voyage",
+      "title": "Rencontrez vos concepteurs de voyage",
+      "description": "Chaque voyage Azure Horizons est façonné par un concepteur qui connaît ces lieux de première main.",
+      "languages": "Parle"
+    },
+    "labels": {
+      "from": "À partir de",
+      "nights": "nuits"
+    }
+  },
+  "tiers": {
+    "comfort": "Confort",
+    "premium": "Premium",
+    "ultra": "Ultra-luxe"
+  },
+  "detail": {
+    "overview": "Aperçu",
+    "included": "Ce qui est inclus",
+    "relatedPackages": "Forfaits associés",
+    "startBooking": "Commencer la réservation",
+    "backToDestinations": "Toutes les destinations",
+    "backToPackages": "Tous les forfaits",
+    "viewDestination": "Voir la destination",
+    "destinationsEyebrow": "Explorer",
+    "destinationsTitle": "Toutes les destinations",
+    "destinationsDescription": "La collection Azure Horizons au complet.",
+    "packagesEyebrow": "Sélection",
+    "packagesTitle": "Tous les forfaits",
+    "packagesDescription": "Des voyages clés en main à personnaliser.",
+    "itinerary": {
+      "eyebrow": "Jour après jour",
+      "title": "Votre voyage, dévoilé",
+      "dayLabel": "Jour",
+      "arrivalTitle": "Arrivée",
+      "arrivalBody": "Un transfert privé, un accueil chaleureux et une soirée paisible pour vous installer.",
+      "departureTitle": "Départ",
+      "departureBody": "Une dernière matinée tranquille avant votre transfert privé — chaque détail pris en charge.",
+      "highlightBody": "Votre journée s'organise autour de cela — le rythme, le guide et chaque détail pensés pour vous.",
+      "freeTitle": "À votre rythme",
+      "freeBody": "Une journée libre pour flâner, vous reposer ou ajouter une envie spontanée, votre concepteur à l'écoute."
+    },
+    "goodToKnow": {
+      "title": "Bon à savoir",
+      "items": [
+        "Vols internationaux (organisés sur demande)",
+        "Assurance voyage",
+        "Dépenses personnelles et pourboires",
+        "Tout ce qui n'est pas listé dans les prestations incluses"
+      ]
+    },
+    "glance": {
+      "title": "En un coup d'œil",
+      "nights": "Nuits",
+      "style": "Style",
+      "from": "À partir de",
+      "destination": "Destination"
+    }
+  },
+  "cta": {
+    "aria": "Parler à un concepteur de voyage",
+    "title": "Parlez à un concepteur de voyage",
+    "body": "Dites-nous ce dont vous rêvez — nous concevrons un voyage autour de cela.",
+    "plan": "Planifier mon voyage",
+    "message": "Envoyer un message",
+    "whatsapp": "WhatsApp",
+    "whatsappText": "Bonjour Azure Horizons, j'aimerais planifier un voyage."
+  },
+  "admin": {
+    "title": "Administration",
+    "bookings": "Réservations",
+    "messages": "Messages",
+    "subscribers": "Abonnés",
+    "exportCsv": "Exporter CSV",
+    "notConfigured": "Définissez SUPABASE_SERVICE_ROLE_KEY dans votre environnement pour afficher et gérer ces données.",
+    "noBookings": "Aucune réservation pour l'instant.",
+    "noMessages": "Aucun message pour l'instant.",
+    "noSubscribers": "Aucun abonné pour l'instant.",
+    "colReference": "Référence",
+    "colCustomer": "Client",
+    "colDestination": "Destination",
+    "colDates": "Dates",
+    "colGuests": "Voyageurs",
+    "colTier": "Style",
+    "colStatus": "Statut",
+    "colEmail": "E-mail",
+    "colLocale": "Langue",
+    "colJoined": "Inscrit le",
+    "confirm": "Confirmer",
+    "cancel": "Annuler",
+    "statusPending": "En attente",
+    "statusConfirmed": "Confirmée",
+    "statusCancelled": "Annulée"
+  },
+  "wishlist": {
+    "eyebrow": "Enregistré",
+    "title": "Votre liste de souhaits",
+    "description": "Les destinations et forfaits que vous avez enregistrés.",
+    "empty": "Rien d'enregistré pour l'instant. Touchez le cœur sur une destination ou un forfait pour l'ajouter ici.",
+    "save": "Enregistrer",
+    "saved": "Enregistré",
+    "add": "Ajouter à la liste",
+    "remove": "Retirer de la liste"
+  },
+  "booking": {
+    "title": "Planifiez votre voyage",
+    "steps": {
+      "destination": "Destination",
+      "dates": "Dates",
+      "guests": "Voyageurs",
+      "budget": "Budget",
+      "package": "Forfait",
+      "review": "Récapitulatif"
+    },
+    "startDate": "Arrivée",
+    "endDate": "Départ",
+    "guestsLabel": "voyageurs",
+    "name": "Nom complet",
+    "email": "E-mail",
+    "noPackages": "Pas de forfait prédéfini ici — nous en concevrons un pour vous.",
+    "noPreference": "Sans préférence — surprenez-moi",
+    "back": "Retour",
+    "next": "Continuer",
+    "confirm": "Confirmer la réservation",
+    "confirming": "Confirmation…",
+    "successTitle": "Votre voyage est réservé",
+    "successBody": "Un concepteur de voyage vous contactera sous un jour ouvré pour peaufiner chaque détail.",
+    "reference": "Référence",
+    "done": "Retour à l'accueil",
+    "error": "Nous n'avons pas pu finaliser. Vérifiez vos informations et réessayez."
+  },
+  "auth": {
+    "signInTitle": "Bon retour",
+    "signUpTitle": "Créez votre compte",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire",
+    "submitting": "Veuillez patienter…",
+    "noAccount": "Nouveau ici ?",
+    "haveAccount": "Vous avez déjà un compte ?",
+    "notConfigured": "Les comptes ne sont pas encore activés dans cet environnement.",
+    "checkEmail": "Vérifiez votre e-mail pour confirmer votre compte.",
+    "accountEyebrow": "Compte",
+    "accountTitle": "Votre compte",
+    "signedInAs": "Connecté en tant que",
+    "signOut": "Se déconnecter",
+    "bookingHistory": "Historique des réservations",
+    "noBookings": "Aucune réservation pour l'instant — commencez à planifier un voyage.",
+    "forgotPassword": "Mot de passe oublié ?",
+    "resetTitle": "Réinitialiser votre mot de passe",
+    "resetIntro": "Saisissez votre e-mail et nous vous enverrons un lien de réinitialisation.",
+    "sendReset": "Envoyer le lien",
+    "resetSent": "Si un compte existe pour cet e-mail, un lien de réinitialisation est en route.",
+    "newPasswordTitle": "Choisissez un nouveau mot de passe",
+    "newPassword": "Nouveau mot de passe",
+    "updatePassword": "Mettre à jour le mot de passe",
+    "weakPassword": "Le mot de passe doit contenir au moins 6 caractères.",
+    "resetExpired": "Ce lien de réinitialisation est invalide ou a expiré. Demandez-en un nouveau."
+  }
+}
