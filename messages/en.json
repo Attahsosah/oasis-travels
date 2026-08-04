@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Azure Horizons — Luxury Travel",
-    "titleTemplate": "%s · Azure Horizons",
-    "description": "Cinematic journeys to the world's most extraordinary destinations. Begin the voyage before you book."
+    "title": "Oasis Travel Agency — Flights, visas, hotels & tours",
+    "titleTemplate": "%s · Oasis Travel Agency",
+    "description": "Travel agency in Bujumbura: great-value flight booking, visa assistance, hotel reservations and tourism services."
   },
   "nav": {
     "destinations": "Destinations",
@@ -21,11 +21,11 @@
     "select": "Select language"
   },
   "hero": {
-    "badge": "Bespoke luxury journeys",
-    "title": "Azure Horizons",
-    "subtitle": "Cinematic journeys to the world's most extraordinary destinations — begin the voyage before you book.",
-    "ctaPrimary": "Begin the voyage",
-    "ctaSecondary": "Explore destinations",
+    "badge": "Your travel agency in Bujumbura",
+    "title": "Your journey starts here",
+    "subtitle": "Flights, visas, hotels and tours — a local team at your service.",
+    "ctaPrimary": "Request a quote",
+    "ctaSecondary": "See our services",
     "cardLabel": "Localized shell",
     "cardBody": "English and French routes, an accessible navigation system, and reduced-motion-aware smooth scrolling — all from one config."
   },
@@ -62,7 +62,7 @@
     }
   },
   "footer": {
-    "tagline": "Cinematic journeys, thoughtfully arranged.",
+    "tagline": "Flights, visas, hotels and tourism services in Bujumbura.",
     "explore": "Explore",
     "company": "Company",
     "legal": "Legal",
@@ -107,12 +107,12 @@
   "sections": {
     "about": {
       "eyebrow": "Who we are",
-      "title": "A boutique studio for extraordinary journeys",
-      "body": "Azure Horizons is a luxury travel studio. We design cinematic, deeply personal journeys to the world's most remarkable places — every detail arranged by a dedicated travel designer, so all you do is arrive.",
+      "title": "Your travel partner in Bujumbura",
+      "body": "Oasis Travel Agency is with you at every step of your trip: great-value flights, visa assistance, hotel reservations and tourism services. A local team, at your service, for travel without the stress.",
       "stats": {
-        "years": { "value": "12+", "label": "Years crafting journeys" },
-        "destinations": { "value": "60+", "label": "Destinations worldwide" },
-        "journeys": { "value": "2,000+", "label": "Journeys designed" }
+        "years": { "value": "Local", "label": "Based in Bujumbura" },
+        "destinations": { "value": "FR · EN", "label": "Bilingual support" },
+        "journeys": { "value": "4", "label": "Services under one roof" }
       }
     },
     "enquiry": {
@@ -129,10 +129,64 @@
       "again": "Send another enquiry",
       "error": "Something went wrong. Please try again."
     },
+    "flightRequest": {
+      "eyebrow": "Book your flight",
+      "title": "Request a flight quote",
+      "subtitle": "Tell us your route — we'll come back with the best available fares. No payment to enquire.",
+      "roundTrip": "Round trip",
+      "oneWay": "One way",
+      "from": "From",
+      "to": "To",
+      "placeholder": "City or airport",
+      "depart": "Depart",
+      "return": "Return",
+      "passengers": "Passengers",
+      "submit": "Request quote",
+      "sending": "Sending…",
+      "successTitle": "Your request is on its way",
+      "successBody": "We'll email you the best available fares shortly.",
+      "again": "Send another request",
+      "error": "Something went wrong. Please try again."
+    },
+    "howItWorks": {
+      "eyebrow": "Simple & transparent",
+      "title": "From request to takeoff",
+      "steps": {
+        "one": { "title": "Send your request", "body": "Tell us your route, dates and travellers — in seconds." },
+        "two": { "title": "Get a quote", "body": "We reply with the best fares and options, no obligation." },
+        "three": { "title": "Confirm & pay", "body": "Choose your option and pay by the method that suits you." },
+        "four": { "title": "Travel with support", "body": "We're with you from booking to arrival." }
+      }
+    },
+    "services": {
+      "eyebrow": "What we do",
+      "title": "Everything your journey needs",
+      "description": "One trusted team for every part of your trip.",
+      "cta": "Enquire",
+      "whatsappText": "Hello, I'd like information about: ",
+      "items": {
+        "flights": {
+          "title": "Flights & ticketing",
+          "description": "Competitive fares and reliable air ticketing to anywhere you need to go."
+        },
+        "stays": {
+          "title": "Hotels & stays",
+          "description": "Handpicked hotels and accommodation matched to your route and budget."
+        },
+        "tours": {
+          "title": "Tours & experiences",
+          "description": "Guided tours and tailor-made experiences, arranged around you."
+        },
+        "visa": {
+          "title": "Visa assistance",
+          "description": "Guidance and support with visa applications and travel documents."
+        }
+      }
+    },
     "featured": {
-      "eyebrow": "Featured",
-      "title": "Signature destinations",
-      "description": "A handpicked collection of the places our travellers return to again and again."
+      "eyebrow": "Destinations",
+      "title": "Popular destinations",
+      "description": "Where our travellers love to fly."
     },
     "explorer": {
       "eyebrow": "Explore",
@@ -294,7 +348,7 @@
     "aria": "Talk to a travel designer",
     "title": "Talk to a travel designer",
     "body": "Tell us what you're dreaming of — we'll shape a journey around it.",
-    "plan": "Plan my trip",
+    "plan": "Request a quote",
     "message": "Send a message",
     "whatsapp": "WhatsApp",
     "whatsappText": "Hello Azure Horizons, I'd like to plan a trip."
@@ -323,7 +377,19 @@
     "cancel": "Cancel",
     "statusPending": "Pending",
     "statusConfirmed": "Confirmed",
-    "statusCancelled": "Cancelled"
+    "statusCancelled": "Cancelled",
+    "settings": {
+      "title": "Settings",
+      "intro": "Contact details shown across the site. Changes take effect immediately.",
+      "whatsapp": "WhatsApp number",
+      "whatsappHint": "Digits only, international format (e.g. 25761369539).",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "hours": "Hours",
+      "save": "Save changes",
+      "saved": "Saved"
+    }
   },
   "wishlist": {
     "eyebrow": "Saved",

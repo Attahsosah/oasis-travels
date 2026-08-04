@@ -38,3 +38,16 @@ export const bookingSchema = z
 
 export type BookingInput = z.infer<typeof bookingSchema>;
 
+export const flightRequestSchema = z.object({
+  tripType: z.enum(["round", "oneway"]),
+  from: z.string().min(2),
+  to: z.string().min(2),
+  departDate: z.string().min(1),
+  returnDate: z.string().optional(),
+  passengers: z.number().int().min(1).max(9),
+  customerName: z.string().min(2),
+  customerEmail: z.email(),
+});
+
+export type FlightRequestInput = z.infer<typeof flightRequestSchema>;
+

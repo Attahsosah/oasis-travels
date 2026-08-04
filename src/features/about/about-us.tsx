@@ -24,7 +24,7 @@ export async function AboutUs({ locale }: { locale: Locale }) {
           {STATS.map((key, i) => (
             <Reveal key={key} delay={0.05 * i}>
               <div className="rounded-2xl border border-border bg-card p-5 text-center">
-                <p className="font-display text-fluid-2xl font-semibold text-navy">
+                <p className="break-words font-display text-fluid-xl font-semibold leading-tight text-navy">
                   {resolveText(dict, `sections.about.stats.${key}.value`)}
                 </p>
                 <p className="mt-1 text-xs text-muted-foreground">

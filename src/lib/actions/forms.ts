@@ -11,6 +11,7 @@ import {
 import {
   bookingSchema,
   contactSchema,
+  flightRequestSchema,
   newsletterSchema,
   type FormState,
 } from "@/lib/validation/schemas";
@@ -105,6 +106,64 @@ export async function createBooking(input: unknown): Promise<BookingResult> {
     to: v.customerEmail,
     subject: `We've received your enquiry (${reference})`,
     html: `<p>Thank you, ${esc(v.customerName)}.</p><p>We've received your enquiry <strong>${esc(reference)}</strong> and a travel designer will be in touch within one business day.</p><p>— ${esc(siteConfig.name)}</p>`,
+  });
+
+  return { ok: true, reference };
+}
+
+export interface FlightRequestResult {
+  ok: boolean;
+  reference?: string;
+  error?: string;
+}
+
+/**
+ * Flight-quote request. Stored as a structured contact message (avoids the
+ * bookings trip-date constraints) and emailed to the agency + a confirmation to
+ * the customer.
+ */
+export async function requestFlight(
+  input: unknown,
+): Promise<FlightRequestResult> {
+  const parsed = flightRequestSchema.safeParse(input);
+  if (!parsed.success) return { ok: false, error: "invalid" };
+  const v = parsed.data;
+  const reference = `OT-${Math.random().toString(36).slice(2, 8).toUpperCase()}`;
+
+  const trip = v.tripType === "round" ? "Aller-retour" : "Aller simple";
+  const dates = v.returnDate
+    ? `${v.departDate} → ${v.returnDate}`
+    : v.departDate;
+  const subject = `Demande de vol : ${v.from} → ${v.to}`;
+  const message = `Type : ${trip}\nItinéraire : ${v.from} → ${v.to}\nDates : ${dates}\nPassagers : ${v.passengers}\nRéférence : ${reference}`;
+
+  if (isSupabaseConfigured()) {
+    try {
+      const supabase = await createSupabaseServerClient();
+      await supabase.from("contact_messages").insert({
+        name: v.customerName,
+        email: v.customerEmail,
+        subject,
+        message,
+      });
+    } catch {
+      // best-effort
+    }
+  }
+
+  const notify = notifyAddress();
+  if (notify) {
+    await sendEmail({
+      to: notify,
+      subject,
+      html: `<h2>${esc(subject)}</h2><p>${esc(message).replace(/\n/g, "<br/>")}</p><p><strong>${esc(v.customerName)}</strong> (${esc(v.customerEmail)})</p>`,
+      replyTo: v.customerEmail,
+    });
+  }
+  await sendEmail({
+    to: v.customerEmail,
+    subject: `${siteConfig.name} — ${reference}`,
+    html: `<p>Merci, ${esc(v.customerName)}.</p><p>Nous avons bien reçu votre demande de vol <strong>${esc(reference)}</strong> et nous vous répondrons avec les meilleurs tarifs disponibles.</p><p>— ${esc(siteConfig.name)}</p>`,
   });
 
   return { ok: true, reference };

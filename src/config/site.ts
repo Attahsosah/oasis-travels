@@ -1,11 +1,9 @@
 import type { CSSProperties } from "react";
 
 /**
- * Single source of truth for everything that changes per client when this
- * template is adapted for a new travel agency. Reskinning a site should mean
- * editing this file (plus content in the DB/seed and env), not hunting through
- * components. `theme` values are applied as CSS variables on <body> in the
- * locale layout, so changing a handful of hex values re-colours the UI.
+ * Single source of truth for everything that changes per client. For Oasis
+ * Travel Agency (Bujumbura, Burundi): a full-service agency — flights, visas,
+ * hotels, tours — operating primarily in French.
  */
 
 export interface SiteContact {
@@ -13,9 +11,7 @@ export interface SiteContact {
   phone: string;
   address: string;
   hours: string;
-  /** Digits only, international format (e.g. "25765827295"). WhatsApp button
-   *  actually reads NEXT_PUBLIC_WHATSAPP_NUMBER at build time; this mirrors it
-   *  for a future contact block. */
+  /** Digits only, international format. Also set NEXT_PUBLIC_WHATSAPP_NUMBER. */
   whatsapp: string;
 }
 
@@ -28,17 +24,11 @@ export interface SiteSocials {
 }
 
 export interface SiteTheme {
-  /** Primary brand colour — CTAs, links, focus. */
   primary: string;
-  /** Deep brand colour — headings, dark bands. */
   navy: string;
-  /** Cool accent. */
   turquoise: string;
-  /** Warm accent. */
   sunset: string;
-  /** Soft neutral (secondary surfaces). */
   sand: string;
-  /** Deep brand blue used by brand utilities. */
   ocean: string;
 }
 
@@ -48,41 +38,57 @@ export interface SiteFeatures {
   designers: boolean;
 }
 
+export interface ServiceItem {
+  key: string;
+  icon: "plane" | "bed" | "compass" | "visa";
+}
+
 export interface SiteConfig {
   name: string;
   tagline: string;
+  logo?: string;
   defaultCurrency: string;
   contact: SiteContact;
   socials: SiteSocials;
   theme: SiteTheme;
   features: SiteFeatures;
+  services: ServiceItem[];
 }
 
 export const siteConfig: SiteConfig = {
-  name: "Azure Horizons",
-  tagline: "Cinematic journeys, thoughtfully arranged.",
+  name: "Oasis Travel Agency",
+  tagline: "Votre partenaire voyage de confiance à Bujumbura.",
+  logo: "/logo-circle.png",
   defaultCurrency: "USD",
   contact: {
-    email: "hello@azurehorizons.com",
+    email: "",
     phone: "",
-    address: "",
+    address: "Bujumbura, Burundi",
     hours: "",
-    whatsapp: "",
+    whatsapp: "25761369539",
   },
-  socials: {},
+  socials: {
+    instagram: "https://www.instagram.com/oasis_travel.agency/",
+  },
   theme: {
-    primary: "#0b6ea8",
-    navy: "#0a1c33",
-    turquoise: "#22b8ab",
-    sunset: "#ff6b3d",
-    sand: "#e9dcc9",
-    ocean: "#0b6ea8",
+    primary: "#2477B3", // Oasis blue
+    navy: "#123C5E", // deep blue — headings / dark bands
+    turquoise: "#38B6E0", // cyan — the OTRAV lettering
+    sunset: "#F2B138", // gold sun
+    sand: "#F1E7CE", // soft warm neutral
+    ocean: "#2477B3",
   },
   features: {
     wishlist: true,
     booking: true,
-    designers: true,
+    designers: false,
   },
+  services: [
+    { key: "flights", icon: "plane" },
+    { key: "visa", icon: "visa" },
+    { key: "stays", icon: "bed" },
+    { key: "tours", icon: "compass" },
+  ],
 };
 
 /** CSS-variable overrides applied to <body> so `theme` re-colours the UI. */

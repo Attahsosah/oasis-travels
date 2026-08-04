@@ -1,7 +1,6 @@
 "use client";
 
-import { Compass } from "lucide-react";
-
+import { BrandMark } from "@/components/layout/brand-mark";
 import { siteConfig } from "@/config/site";
 import { NAV_KEYS } from "@/components/layout/nav";
 import { TransitionLink } from "@/features/transitions/transition-link";
@@ -46,10 +45,7 @@ export function Footer() {
     <footer className="border-t border-border bg-card/40">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-3">
-          <span className="flex items-center gap-2 font-display text-lg font-semibold text-foreground">
-            <Compass className="size-5 text-primary" aria-hidden="true" />
-            {siteConfig.name}
-          </span>
+          <BrandMark className="text-foreground" />
           <p className="max-w-xs text-sm text-muted-foreground">
             {t("footer.tagline")}
           </p>

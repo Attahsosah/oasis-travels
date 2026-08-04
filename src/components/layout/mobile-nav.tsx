@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { Compass, X } from "lucide-react";
+import { X } from "lucide-react";
 
-import { siteConfig } from "@/config/site";
+import { BrandMark } from "@/components/layout/brand-mark";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { NAV_KEYS } from "@/components/layout/nav";
 import { TransitionLink } from "@/features/transitions/transition-link";
@@ -61,10 +61,7 @@ export function MobileNav({ open, onClose, authed }: MobileNavProps) {
           transition={{ duration: reduce ? 0 : 0.25 }}
         >
           <div className="flex items-center justify-between px-6 py-4">
-            <span className="flex items-center gap-2 font-display text-lg font-semibold text-foreground">
-              <Compass className="size-5 text-primary" aria-hidden="true" />
-              {siteConfig.name}
-            </span>
+            <BrandMark className="text-foreground" />
             <button
               type="button"
               onClick={onClose}

@@ -22,6 +22,7 @@ import {
 } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { I18nProvider } from "@/lib/i18n/provider";
+import { getSiteSettings } from "@/lib/settings";
 import { getSessionUser } from "@/lib/supabase/auth";
 
 const inter = Inter({
@@ -102,6 +103,7 @@ export default async function LocaleLayout({
   const dict = await getDictionary(locale as Locale);
   const common = dict.common as { skipToContent: string };
   const user = await getSessionUser();
+  const settings = await getSiteSettings();
 
   return (
     <html
@@ -127,7 +129,10 @@ export default async function LocaleLayout({
             <Header authed={Boolean(user)} />
             <main id="main">{children}</main>
             <Footer />
-            <FloatingDesignerCta locale={locale} />
+            <FloatingDesignerCta
+              locale={locale}
+              whatsappNumber={settings.whatsapp}
+            />
             <TransitionOverlay />
           </TransitionProvider>
         </I18nProvider>

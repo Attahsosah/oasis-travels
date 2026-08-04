@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Azure Horizons — Voyages de Luxe",
-    "titleTemplate": "%s · Azure Horizons",
-    "description": "Des voyages cinématographiques vers les destinations les plus extraordinaires du monde. Commencez le voyage avant même de réserver."
+    "title": "Oasis Travel Agency — Billets d'avion, visa, hôtels & tourisme",
+    "titleTemplate": "%s · Oasis Travel Agency",
+    "description": "Agence de voyage à Bujumbura : billets d'avion au meilleur prix, assistance visa, réservation d'hôtel et services touristiques."
   },
   "nav": {
     "destinations": "Destinations",
@@ -21,11 +21,11 @@
     "select": "Choisir la langue"
   },
   "hero": {
-    "badge": "Voyages de luxe sur mesure",
-    "title": "Azure Horizons",
-    "subtitle": "Des voyages cinématographiques vers les destinations les plus extraordinaires du monde — commencez le voyage avant de réserver.",
-    "ctaPrimary": "Commencer le voyage",
-    "ctaSecondary": "Explorer les destinations",
+    "badge": "Votre agence de voyage à Bujumbura",
+    "title": "Votre voyage commence ici",
+    "subtitle": "Billets d'avion, visa, hôtels et services touristiques — une équipe locale à votre écoute.",
+    "ctaPrimary": "Demander un devis",
+    "ctaSecondary": "Voir nos services",
     "cardLabel": "Structure localisée",
     "cardBody": "Des routes en anglais et en français, une navigation accessible et un défilement fluide respectant les préférences de mouvement — le tout depuis une seule configuration."
   },
@@ -62,7 +62,7 @@
     }
   },
   "footer": {
-    "tagline": "Des voyages cinématographiques, arrangés avec soin.",
+    "tagline": "Billets d'avion, visa, hôtels et services touristiques à Bujumbura.",
     "explore": "Explorer",
     "company": "Entreprise",
     "legal": "Mentions légales",
@@ -107,12 +107,12 @@
   "sections": {
     "about": {
       "eyebrow": "Qui nous sommes",
-      "title": "Un studio d'exception pour des voyages extraordinaires",
-      "body": "Azure Horizons est un studio de voyage de luxe. Nous concevons des voyages cinématographiques et profondément personnels vers les lieux les plus remarquables du monde — chaque détail orchestré par un concepteur de voyage dédié, pour qu'il ne vous reste plus qu'à arriver.",
+      "title": "Votre partenaire voyage à Bujumbura",
+      "body": "Oasis Travel Agency vous accompagne à chaque étape de votre voyage : billets d'avion au meilleur prix, assistance visa, réservation d'hôtel et services touristiques. Une équipe locale, à votre écoute, pour des voyages sans souci.",
       "stats": {
-        "years": { "value": "12+", "label": "Années à créer des voyages" },
-        "destinations": { "value": "60+", "label": "Destinations dans le monde" },
-        "journeys": { "value": "2 000+", "label": "Voyages conçus" }
+        "years": { "value": "Local", "label": "Basée à Bujumbura" },
+        "destinations": { "value": "FR · EN", "label": "Assistance bilingue" },
+        "journeys": { "value": "4", "label": "Services sous un même toit" }
       }
     },
     "enquiry": {
@@ -129,10 +129,64 @@
       "again": "Envoyer une autre demande",
       "error": "Une erreur s'est produite. Veuillez réessayer."
     },
+    "flightRequest": {
+      "eyebrow": "Réservez votre vol",
+      "title": "Demandez un devis de vol",
+      "subtitle": "Indiquez votre trajet — nous revenons vers vous avec les meilleurs tarifs. Aucun paiement pour demander.",
+      "roundTrip": "Aller-retour",
+      "oneWay": "Aller simple",
+      "from": "Départ",
+      "to": "Arrivée",
+      "placeholder": "Ville ou aéroport",
+      "depart": "Aller",
+      "return": "Retour",
+      "passengers": "Passagers",
+      "submit": "Demander un devis",
+      "sending": "Envoi…",
+      "successTitle": "Votre demande est en route",
+      "successBody": "Nous vous enverrons les meilleurs tarifs disponibles très bientôt.",
+      "again": "Envoyer une autre demande",
+      "error": "Une erreur s'est produite. Veuillez réessayer."
+    },
+    "howItWorks": {
+      "eyebrow": "Simple et transparent",
+      "title": "De la demande au décollage",
+      "steps": {
+        "one": { "title": "Envoyez votre demande", "body": "Indiquez votre trajet, vos dates et vos voyageurs — en quelques secondes." },
+        "two": { "title": "Recevez un devis", "body": "Nous répondons avec les meilleurs tarifs et options, sans engagement." },
+        "three": { "title": "Confirmez et payez", "body": "Choisissez votre option et payez par le moyen qui vous convient." },
+        "four": { "title": "Voyagez sereinement", "body": "Nous vous accompagnons de la réservation à l'arrivée." }
+      }
+    },
+    "services": {
+      "eyebrow": "Nos services",
+      "title": "Tout ce dont votre voyage a besoin",
+      "description": "Une équipe de confiance pour chaque étape de votre voyage.",
+      "cta": "Demander",
+      "whatsappText": "Bonjour, je souhaite des informations sur : ",
+      "items": {
+        "flights": {
+          "title": "Billets d'avion",
+          "description": "Des tarifs compétitifs et une billetterie fiable vers toutes vos destinations."
+        },
+        "stays": {
+          "title": "Réservation d'hôtel",
+          "description": "Des hôtels sélectionnés selon votre itinéraire et votre budget."
+        },
+        "tours": {
+          "title": "Services touristiques",
+          "description": "Visites guidées et expériences sur mesure, organisées pour vous."
+        },
+        "visa": {
+          "title": "Assistance visa",
+          "description": "Accompagnement pour vos demandes de visa et documents de voyage."
+        }
+      }
+    },
     "featured": {
-      "eyebrow": "À la une",
-      "title": "Destinations signature",
-      "description": "Une collection choisie des lieux où nos voyageurs reviennent encore et encore."
+      "eyebrow": "Destinations",
+      "title": "Destinations populaires",
+      "description": "Là où nos voyageurs aiment s'envoler."
     },
     "explorer": {
       "eyebrow": "Explorer",
@@ -294,7 +348,7 @@
     "aria": "Parler à un concepteur de voyage",
     "title": "Parlez à un concepteur de voyage",
     "body": "Dites-nous ce dont vous rêvez — nous concevrons un voyage autour de cela.",
-    "plan": "Planifier mon voyage",
+    "plan": "Demander un devis",
     "message": "Envoyer un message",
     "whatsapp": "WhatsApp",
     "whatsappText": "Bonjour Azure Horizons, j'aimerais planifier un voyage."
@@ -323,7 +377,19 @@
     "cancel": "Annuler",
     "statusPending": "En attente",
     "statusConfirmed": "Confirmée",
-    "statusCancelled": "Annulée"
+    "statusCancelled": "Annulée",
+    "settings": {
+      "title": "Paramètres",
+      "intro": "Coordonnées affichées sur le site. Les modifications sont immédiates.",
+      "whatsapp": "Numéro WhatsApp",
+      "whatsappHint": "Chiffres uniquement, format international (ex. 25761369539).",
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "address": "Adresse",
+      "hours": "Horaires",
+      "save": "Enregistrer",
+      "saved": "Enregistré"
+    }
   },
   "wishlist": {
     "eyebrow": "Enregistré",

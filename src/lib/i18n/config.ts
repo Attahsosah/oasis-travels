@@ -1,17 +1,17 @@
 /**
  * Internationalization configuration — single source of truth.
  *
- * Sub-path routing (`/en`, `/fr`). Adding a language is a three-step change:
+ * Sub-path routing (`/fr`, `/en`). Adding a language is a three-step change:
  * add the code here, add its display name + direction, and add a
  * `messages/{code}.json` dictionary. Everything else (routing, middleware,
  * static params, hreflang) derives from this file.
  */
 
-export const locales = ["en", "fr"] as const;
+export const locales = ["fr", "en"] as const;
 
 export type Locale = (typeof locales)[number];
 
-export const defaultLocale: Locale = "en";
+export const defaultLocale: Locale = "fr";
 
 /** Human-readable names for the language switcher. */
 export const localeNames: Record<Locale, string> = {

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Mail, MessageCircle, Plane, X } from "lucide-react";
 
+import { siteConfig } from "@/config/site";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { useI18n } from "@/lib/i18n/provider";
 
@@ -13,12 +14,21 @@ import { useI18n } from "@/lib/i18n/provider";
  * a small speed-dial with plan / message actions. Its icon rotates between chat
  * and close, and the panel springs open — a distinct micro-interaction.
  */
-export function FloatingDesignerCta({ locale }: { locale: string }) {
+export function FloatingDesignerCta({
+  locale,
+  whatsappNumber,
+}: {
+  locale: string;
+  whatsappNumber?: string;
+}) {
   const { t } = useI18n();
   const reduce = useReducedMotion();
   const [open, setOpen] = useState(false);
   const home = `/${locale}`;
-  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+  const whatsapp =
+    whatsappNumber ||
+    siteConfig.contact.whatsapp ||
+    process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
 
   return (
     <div className="fixed bottom-5 right-5 z-[80] flex flex-col items-end gap-3">
@@ -40,7 +50,7 @@ export function FloatingDesignerCta({ locale }: { locale: string }) {
             </p>
             <div className="mt-4 flex flex-col gap-2">
               <Link
-                href={`${home}/booking`}
+                href={`${home}#flight-request`}
                 onClick={() => setOpen(false)}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground"
               >

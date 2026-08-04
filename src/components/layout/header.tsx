@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Compass, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 
-import { siteConfig } from "@/config/site";
+import { BrandMark } from "@/components/layout/brand-mark";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { NAV_KEYS } from "@/components/layout/nav";
@@ -37,12 +37,8 @@ export function Header({ authed }: { authed: boolean }) {
         className={`glass mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-full px-4 py-2.5 transition-shadow duration-300 sm:px-6 ${scrolled ? "shadow-elevated" : ""}`}
       >
         <div className="flex items-center gap-3">
-          <TransitionLink
-            href={home}
-            className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-foreground"
-          >
-            <Compass className="size-5 text-primary" aria-hidden="true" />
-            <span>{siteConfig.name}</span>
+          <TransitionLink href={home} className="text-foreground">
+            <BrandMark />
           </TransitionLink>
           <LanguageSwitcher className="md:hidden" />
         </div>

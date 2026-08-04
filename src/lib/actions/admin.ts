@@ -39,3 +39,38 @@ export async function updateBookingStatus(
     return { ok: false };
   }
 }
+
+export interface SiteSettingsInput {
+  whatsapp?: string;
+  email?: string;
+  phone?: string;
+  address?: string;
+  hours?: string;
+}
+
+/** Admin-only update of the editable site settings (contact details). */
+export async function updateSiteSettings(
+  input: SiteSettingsInput,
+): Promise<{ ok: boolean }> {
+  const admin = await getAdminUser();
+  if (!admin || !isAdminConfigured()) return { ok: false };
+  try {
+    await createSupabaseAdminClient()
+      .from("site_settings")
+      .upsert({
+        id: 1,
+        whatsapp: input.whatsapp ?? "",
+        email: input.email ?? "",
+        phone: input.phone ?? "",
+        address: input.address ?? "",
+        hours: input.hours ?? "",
+        updated_at: new Date().toISOString(),
+      });
+    // Settings feed the layout (floating CTA), so revalidate the whole tree.
+    revalidatePath("/en", "layout");
+    revalidatePath("/fr", "layout");
+    return { ok: true };
+  } catch {
+    return { ok: false };
+  }
+}

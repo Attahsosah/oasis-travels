@@ -62,6 +62,9 @@ export default async function AdminLayout({
         <Link href={`/${locale}/admin/subscribers`} className={tabClass}>
           {resolveText(dict, "admin.subscribers")}
         </Link>
+        <Link href={`/${locale}/admin/settings`} className={tabClass}>
+          {resolveText(dict, "admin.settings.title")}
+        </Link>
       </nav>
 
       {children}
