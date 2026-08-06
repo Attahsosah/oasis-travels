@@ -29,7 +29,9 @@ export function BrandMark({ className }: { className?: string }) {
       ) : (
         <Compass className="size-5 text-primary" aria-hidden="true" />
       )}
-      {siteConfig.name}
+      {/* Name is hidden on phones to keep the mobile navbar compact; the logo
+          alone represents the brand there. */}
+      <span className="hidden sm:inline">{siteConfig.name}</span>
     </span>
   );
 }
