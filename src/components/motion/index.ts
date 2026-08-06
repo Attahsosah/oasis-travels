@@ -13,3 +13,4 @@ export { Marquee } from "./marquee";
 export { MagneticButton } from "./magnetic-button";
 export { RippleButton } from "./ripple-button";
 export { FloatingCard } from "./floating-card";
+export { ScrollProgress } from "./scroll-progress";

@@ -11,6 +11,7 @@ import { siteConfig, themeStyle } from "@/config/site";
 import { AuroraBackground } from "@/components/layout/aurora-background";
 import { FloatingDesignerCta } from "@/components/layout/floating-designer-cta";
 import { FlightPath } from "@/components/layout/flight-path";
+import { ScrollProgress } from "@/components/motion";
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
 import { TransitionOverlay } from "@/features/transitions/transition-overlay";
 import { TransitionProvider } from "@/features/transitions/transition-provider";
@@ -117,6 +118,7 @@ export default async function LocaleLayout({
       >
         <AuroraBackground />
         <FlightPath />
+        <ScrollProgress />
         <I18nProvider locale={locale as Locale} dictionary={dict}>
           <TransitionProvider>
             <SmoothScroll />

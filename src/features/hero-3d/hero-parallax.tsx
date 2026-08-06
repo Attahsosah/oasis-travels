@@ -1,16 +1,30 @@
 "use client";
 
-import { type ReactNode, useRef } from "react";
+import { type ReactNode, useEffect, useRef, useState } from "react";
 import {
+  AnimatePresence,
   motion,
   useMotionValue,
   useScroll,
   useSpring,
   useTransform,
 } from "framer-motion";
+import { Compass } from "lucide-react";
 
 import { ImageWithFallback } from "@/components/layout/image-with-fallback";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import { useI18n } from "@/lib/i18n/provider";
+
+type OrientationPermission = "granted" | "denied" | "default";
+
+/** iOS 13+ exposes a permission gate on the constructor; other platforms don't. */
+interface DeviceOrientationEventIOS {
+  requestPermission?: () => Promise<OrientationPermission>;
+}
+
+function clamp(v: number, min: number, max: number): number {
+  return Math.min(max, Math.max(min, v));
+}
 
 // Bespoke, on-brand hero: an airplane window-seat view over ocean and islands,
 // generated via the image connector.
@@ -37,6 +51,7 @@ const MOTES = [
  */
 export function HeroParallax({ children }: { children: ReactNode }) {
   const reduce = useReducedMotion();
+  const { locale } = useI18n();
   const ref = useRef<HTMLElement>(null);
 
   // Pointer position, normalised to roughly [-0.5, 0.5], spring-smoothed.
@@ -45,6 +60,11 @@ export function HeroParallax({ children }: { children: ReactNode }) {
   const spring = { stiffness: 55, damping: 18, mass: 0.7 };
   const sx = useSpring(px, spring);
   const sy = useSpring(py, spring);
+
+  // On touch devices the pointer never moves, so the depth parallax is driven
+  // by the gyroscope instead. `needsPermission` is true only on iOS, where the
+  // sensor requires an explicit user gesture to unlock.
+  const [needsPermission, setNeedsPermission] = useState(false);
 
   function handleMove(e: React.MouseEvent) {
     if (reduce) return;
@@ -56,6 +76,48 @@ export function HeroParallax({ children }: { children: ReactNode }) {
   function handleLeave() {
     px.set(0);
     py.set(0);
+  }
+
+  // Translate device tilt into the same [-0.5, 0.5] space as the pointer.
+  function handleOrientation(e: DeviceOrientationEvent) {
+    const gamma = e.gamma; // left/right tilt, degrees
+    const beta = e.beta; // front/back tilt, degrees
+    if (gamma === null || beta === null) return;
+    // Neutral hold is ~45° of forward tilt; ±40° of range maps to the extremes.
+    px.set(clamp(gamma / 40, -0.5, 0.5));
+    py.set(clamp((beta - 45) / 40, -0.5, 0.5));
+  }
+
+  useEffect(() => {
+    if (reduce || typeof window === "undefined") return;
+    // Only phones/tablets: skip fine-pointer (desktop) devices entirely.
+    if (!window.matchMedia("(pointer: coarse)").matches) return;
+    if (typeof window.DeviceOrientationEvent === "undefined") return;
+
+    const gate = window.DeviceOrientationEvent as unknown as DeviceOrientationEventIOS;
+    if (typeof gate.requestPermission === "function") {
+      // iOS: wait for a tap before we can read the sensor.
+      setNeedsPermission(true);
+      return;
+    }
+    window.addEventListener("deviceorientation", handleOrientation);
+    return () =>
+      window.removeEventListener("deviceorientation", handleOrientation);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reduce]);
+
+  async function enableMotion() {
+    const gate =
+      window.DeviceOrientationEvent as unknown as DeviceOrientationEventIOS;
+    try {
+      const result = await gate.requestPermission?.();
+      if (result === "granted") {
+        window.addEventListener("deviceorientation", handleOrientation);
+      }
+    } catch {
+      // Ignore — leave the hero on its static/scroll behaviour.
+    }
+    setNeedsPermission(false);
   }
 
   // Scroll drift as the hero leaves the viewport.
@@ -162,6 +224,24 @@ export function HeroParallax({ children }: { children: ReactNode }) {
       >
         {children}
       </motion.div>
+
+      {/* Touch devices (iOS): tap to unlock gyroscope-driven depth. */}
+      <AnimatePresence>
+        {!reduce && needsPermission && (
+          <motion.button
+            type="button"
+            onClick={() => void enableMotion()}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 12 }}
+            transition={{ delay: 1.2, duration: 0.4 }}
+            className="absolute bottom-7 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-md"
+          >
+            <Compass className="size-4" aria-hidden="true" />
+            {locale === "fr" ? "Inclinez pour explorer" : "Tilt to explore"}
+          </motion.button>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
