@@ -12,6 +12,7 @@ import {
 import { Compass } from "lucide-react";
 
 import { ImageWithFallback } from "@/components/layout/image-with-fallback";
+import { HeroAmbient } from "@/features/hero-3d/hero-ambient";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { useI18n } from "@/lib/i18n/provider";
 
@@ -154,12 +155,27 @@ export function HeroParallax({ children }: { children: ReactNode }) {
           className="absolute inset-[-10%]"
           style={reduce ? undefined : { x: bgX, y: bgY, scale: 1.16 }}
         >
-          <ImageWithFallback
-            src={HERO_IMAGE}
-            alt=""
-            sizes="100vw"
-            priority
-          />
+          {/* Ken Burns — a slow, continuous zoom/pan that keeps the still photo
+              feeling alive even before any interaction. */}
+          <motion.div
+            className="absolute inset-0"
+            animate={
+              reduce
+                ? undefined
+                : {
+                    scale: [1, 1.09, 1],
+                    x: ["0%", "-2.5%", "0%"],
+                    y: ["0%", "2%", "0%"],
+                  }
+            }
+            transition={
+              reduce
+                ? undefined
+                : { duration: 32, ease: "easeInOut", repeat: Infinity }
+            }
+          >
+            <ImageWithFallback src={HERO_IMAGE} alt="" sizes="100vw" priority />
+          </motion.div>
         </motion.div>
       </motion.div>
 
@@ -214,6 +230,9 @@ export function HeroParallax({ children }: { children: ReactNode }) {
           ))}
         </motion.div>
       )}
+
+      {/* Ambient motion: drifting clouds, plane flight-path, light sweep. */}
+      <HeroAmbient />
 
       {/* Layer 4 — content (server-rendered children). */}
       <motion.div
