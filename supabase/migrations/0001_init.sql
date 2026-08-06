@@ -2,6 +2,10 @@
 -- Content tables use a single `i18n jsonb` column shaped { en: {...}, fr: {...} }
 -- for localized prose, mirroring src/lib/data/types.ts. Proper nouns stay as
 -- plain columns. User-owned tables reference auth.users.
+--
+-- This migration is idempotent: every object uses `if not exists` / `or replace`
+-- and every policy is dropped-if-exists before being (re)created, so it can be
+-- run repeatedly without error (e.g. after a partial apply).
 
 -- ----------------------------------------------------------------------------
 -- Profiles (1:1 with auth.users)
@@ -175,29 +179,47 @@ alter table public.newsletter_subs enable row level security;
 alter table public.contact_messages enable row level security;
 
 -- Content: readable by anyone (incl. anon); writes reserved for service role.
+drop policy if exists "content_public_read_destinations" on public.destinations;
 create policy "content_public_read_destinations" on public.destinations for select using (true);
+drop policy if exists "content_public_read_packages" on public.packages;
 create policy "content_public_read_packages" on public.packages for select using (true);
+drop policy if exists "content_public_read_experiences" on public.experiences;
 create policy "content_public_read_experiences" on public.experiences for select using (true);
+drop policy if exists "content_public_read_categories" on public.categories;
 create policy "content_public_read_categories" on public.categories for select using (true);
+drop policy if exists "content_public_read_testimonials" on public.testimonials;
 create policy "content_public_read_testimonials" on public.testimonials for select using (true);
+drop policy if exists "content_public_read_partners" on public.partners;
 create policy "content_public_read_partners" on public.partners for select using (true);
+drop policy if exists "content_public_read_faqs" on public.faqs;
 create policy "content_public_read_faqs" on public.faqs for select using (true);
 
 -- Profiles: a user reads/updates only their own row.
+drop policy if exists "profiles_select_own" on public.profiles;
 create policy "profiles_select_own" on public.profiles for select using (auth.uid() = id);
+drop policy if exists "profiles_update_own" on public.profiles;
 create policy "profiles_update_own" on public.profiles for update using (auth.uid() = id);
 
 -- Bookings: a user manages only their own.
+drop policy if exists "bookings_select_own" on public.bookings;
 create policy "bookings_select_own" on public.bookings for select using (auth.uid() = user_id);
+drop policy if exists "bookings_insert_own" on public.bookings;
 create policy "bookings_insert_own" on public.bookings for insert with check (auth.uid() = user_id);
+drop policy if exists "bookings_update_own" on public.bookings;
 create policy "bookings_update_own" on public.bookings for update using (auth.uid() = user_id);
+drop policy if exists "bookings_delete_own" on public.bookings;
 create policy "bookings_delete_own" on public.bookings for delete using (auth.uid() = user_id);
 
 -- Wishlists: a user manages only their own.
+drop policy if exists "wishlists_select_own" on public.wishlists;
 create policy "wishlists_select_own" on public.wishlists for select using (auth.uid() = user_id);
+drop policy if exists "wishlists_insert_own" on public.wishlists;
 create policy "wishlists_insert_own" on public.wishlists for insert with check (auth.uid() = user_id);
+drop policy if exists "wishlists_delete_own" on public.wishlists;
 create policy "wishlists_delete_own" on public.wishlists for delete using (auth.uid() = user_id);
 
 -- Marketing capture: anyone may insert; nobody may read via the anon/auth key.
+drop policy if exists "newsletter_public_insert" on public.newsletter_subs;
 create policy "newsletter_public_insert" on public.newsletter_subs for insert with check (true);
+drop policy if exists "contact_public_insert" on public.contact_messages;
 create policy "contact_public_insert" on public.contact_messages for insert with check (true);

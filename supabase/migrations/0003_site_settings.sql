@@ -18,5 +18,6 @@ alter table public.site_settings enable row level security;
 
 -- Anyone may read (the site renders contact info); writes go through the
 -- service role, which bypasses RLS.
+drop policy if exists "site_settings_public_read" on public.site_settings;
 create policy "site_settings_public_read" on public.site_settings
   for select using (true);

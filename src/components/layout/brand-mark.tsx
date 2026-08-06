@@ -24,7 +24,7 @@ export function BrandMark({ className }: { className?: string }) {
           width={48}
           height={48}
           priority
-          className="h-11 w-auto"
+          className="h-8 w-auto sm:h-11"
         />
       ) : (
         <Compass className="size-5 text-primary" aria-hidden="true" />
