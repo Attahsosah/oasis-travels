@@ -42,6 +42,12 @@ const fraunces = Fraunces({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
+// The shared layout reads per-request data (auth session + editable site
+// settings) via cookies, so the whole locale segment must render dynamically.
+// Without this, cookie-free pages (e.g. /about, /terms) try to prerender at
+// build time and fail once Supabase is configured.
+export const dynamic = "force-dynamic";
+
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
