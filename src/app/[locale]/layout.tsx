@@ -40,7 +40,25 @@ const fraunces = Fraunces({
   axes: ["opsz"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+/**
+ * Normalises NEXT_PUBLIC_SITE_URL into a valid absolute URL. Tolerates a
+ * missing scheme (adds https://) and strips a trailing slash, so a value like
+ * "kazeline-agency.vercel.app" can't crash `new URL()` in generateMetadata and
+ * take down every page.
+ */
+function resolveSiteUrl(raw: string | undefined): string {
+  const fallback = "http://localhost:3000";
+  if (!raw || !raw.trim()) return fallback;
+  const trimmed = raw.trim().replace(/\/+$/, "");
+  const withScheme = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+  try {
+    return new URL(withScheme).origin;
+  } catch {
+    return fallback;
+  }
+}
+
+const siteUrl = resolveSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
 
 // The shared layout reads per-request data (auth session + editable site
 // settings) via cookies, so the whole locale segment must render dynamically.
