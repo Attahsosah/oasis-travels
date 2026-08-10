@@ -92,7 +92,7 @@ export function Preloader() {
     >
       <video
         ref={videoRef}
-        src="/kazeline-preloader.mp4"
+        src="/kazeline-intro.mp4"
         muted
         playsInline
         autoPlay
