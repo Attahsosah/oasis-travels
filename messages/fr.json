@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Oasis Travel Agency — Billets d'avion, visa, hôtels & tourisme",
-    "titleTemplate": "%s · Oasis Travel Agency",
+    "title": "Kazeline Agency — Billets d'avion, visa, hôtels & tourisme",
+    "titleTemplate": "%s · Kazeline Agency",
     "description": "Agence de voyage à Bujumbura : billets d'avion au meilleur prix, assistance visa, réservation d'hôtel et services touristiques."
   },
   "nav": {
@@ -108,7 +108,7 @@
     "about": {
       "eyebrow": "Qui nous sommes",
       "title": "Votre partenaire voyage à Bujumbura",
-      "body": "Oasis Travel Agency vous accompagne à chaque étape de votre voyage : billets d'avion au meilleur prix, assistance visa, réservation d'hôtel et services touristiques. Une équipe locale, à votre écoute, pour des voyages sans souci.",
+      "body": "Kazeline Agency vous accompagne à chaque étape de votre voyage : billets d'avion au meilleur prix, assistance visa, réservation d'hôtel et services touristiques. Une équipe locale, à votre écoute, pour des voyages sans souci.",
       "stats": {
         "years": { "value": "Local", "label": "Basée à Bujumbura" },
         "destinations": { "value": "FR · EN", "label": "Assistance bilingue" },
@@ -249,7 +249,7 @@
       "description": "Nous collaborons avec certains des meilleurs hôtels, compagnies aériennes et guides au monde."
     },
     "whyus": {
-      "eyebrow": "Pourquoi Azure Horizons",
+      "eyebrow": "Pourquoi Kazeline Agency",
       "title": "Le voyage, sublimé",
       "description": "La différence se joue dans les détails — et dans ceux qui s'en occupent.",
       "items": {
@@ -273,7 +273,7 @@
     },
     "gallery": {
       "eyebrow": "Un aperçu",
-      "title": "La galerie Azure Horizons",
+      "title": "La galerie Kazeline Agency",
       "description": "Des scènes de voyages autour du monde."
     },
     "browse": {
@@ -288,7 +288,7 @@
     "designers": {
       "eyebrow": "Les personnes derrière le voyage",
       "title": "Rencontrez vos concepteurs de voyage",
-      "description": "Chaque voyage Azure Horizons est façonné par un concepteur qui connaît ces lieux de première main.",
+      "description": "Chaque voyage Kazeline Agency est façonné par un concepteur qui connaît ces lieux de première main.",
       "languages": "Parle"
     },
     "labels": {
@@ -311,7 +311,7 @@
     "viewDestination": "Voir la destination",
     "destinationsEyebrow": "Explorer",
     "destinationsTitle": "Toutes les destinations",
-    "destinationsDescription": "La collection Azure Horizons au complet.",
+    "destinationsDescription": "La collection Kazeline Agency au complet.",
     "packagesEyebrow": "Sélection",
     "packagesTitle": "Tous les forfaits",
     "packagesDescription": "Des voyages clés en main à personnaliser.",
@@ -351,7 +351,7 @@
     "plan": "Demander un devis",
     "message": "Envoyer un message",
     "whatsapp": "WhatsApp",
-    "whatsappText": "Bonjour Azure Horizons, j'aimerais planifier un voyage."
+    "whatsappText": "Bonjour Kazeline Agency, j'aimerais planifier un voyage."
   },
   "admin": {
     "title": "Administration",

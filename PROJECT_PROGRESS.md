@@ -1,4 +1,4 @@
-# Project Progress — Azure Horizons
+# Project Progress — Kazeline Agency
 
 Living status doc. Updated at the end of every phase so any developer can
 understand the project's current state at a glance.
@@ -106,7 +106,7 @@ Switching between `npm run build` and `npm run dev` in the same folder corrupts 
 - **GLB plane slot:** `PLANE_MODEL_URL` in `scene.tsx` (currently `null` → procedural plane). Drop a `.glb` into `public/models/`, set the constant, and tune `scale`/`rotation` on the `<primitive>`. A `PlaneErrorBoundary` + `Suspense` fall back to the procedural plane if the model is missing/fails. Draco decoder requested by default. Sources noted: Poly Pizza / Quaternius / Kenney (CC0), Sketchfab (check licence).
 - **Image fix:** `ImageWithFallback` now uses `unoptimized` — Next's dev image optimizer was timing out fetching remote Unsplash photos (all tiles fell back to gradients). Direct-from-CDN loads fixed it. **For production, pre-download + optimize images locally in the Phase 9 asset pipeline and remove the flag.**
 
-**Project location:** `programming-projects/azure-horizons/` (all app files live in this
+**Project location:** `programming-projects/oasis-travels/` (all app files live in this
 subfolder; run all commands from here). `IMPLEMENTATION_PLAN.md` remains at the
 `programming-projects/` root as the overall brief.
 
@@ -134,7 +134,7 @@ subfolder; run all commands from here). `IMPLEMENTATION_PLAN.md` remains at the
 next 15.1.6 · react/react-dom 19.0.0 · typescript 5.7.3 · tailwindcss 4.0.0 · @tailwindcss/postcss 4.0.0 · tw-animate-css 1.2.0 · lucide-react 0.469.0 · clsx 2.1.1 · tailwind-merge 2.6.0 · class-variance-authority 0.7.1 · eslint 9.18.0 · eslint-config-next 15.1.6 · eslint-config-prettier 9.1.0 · prettier 3.4.2 · prettier-plugin-tailwindcss 0.6.9 · @eslint/eslintrc 3.2.0 · @types/{node,react,react-dom}
 
 ### Known issues / notes
-- Project relocated into `azure-horizons/` subfolder (move verified on disk). All files intact at the new path.
+- Project relocated into `kazeline-agency/` subfolder (move verified on disk). All files intact at the new path.
 - **Build verification PASSED** (run manually by the user): `npm install` → `npm run typecheck` (tsc --noEmit, clean) → `npm run build` (compiled successfully, 4 static routes, `/` ≈ 105 kB First Load JS).
 - **Tailwind version fix:** `tailwindcss` and `@tailwindcss/postcss` bumped `4.0.0 → 4.3.0`. The original `4.0.0` pin crashed the build with `Missing field 'negated' on ScannerOptions.sources` — a skew between the pinned `@tailwindcss/postcss@4.0.0` JS and a newer transitively-resolved `@tailwindcss/oxide`. `@tailwindcss/postcss@4.3.0` pins `@tailwindcss/oxide` to an exact matching version, eliminating the skew. Requires a clean reinstall (delete `node_modules` + `package-lock.json`).
 - **Security:** `npm audit` reports 5 vulnerabilities (1 critical, 1 high, 1 moderate, 2 low); `next@15.1.6` flagged (CVE-2025-6647). **Scheduled: bump Next to a patched `15.x` at the start of Phase 3** (per decision) and re-audit.

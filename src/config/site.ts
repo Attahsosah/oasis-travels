@@ -1,8 +1,8 @@
 import type { CSSProperties } from "react";
 
 /**
- * Single source of truth for everything that changes per client. For Oasis
- * Travel Agency (Bujumbura, Burundi): a full-service agency — flights, visas,
+ * Single source of truth for everything that changes per client. For Kazeline
+ * Agency (Bujumbura, Burundi): a full-service agency — flights, visas,
  * hotels, tours — operating primarily in French.
  */
 
@@ -47,6 +47,9 @@ export interface SiteConfig {
   name: string;
   tagline: string;
   logo?: string;
+  /** Set when the logo image already contains the brand name (wordmark), so the
+   *  chrome shouldn't render the name text next to it. */
+  logoIncludesName?: boolean;
   defaultCurrency: string;
   contact: SiteContact;
   socials: SiteSocials;
@@ -56,9 +59,10 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  name: "Oasis Travel Agency",
-  tagline: "Votre partenaire voyage de confiance à Bujumbura.",
-  logo: "/logo-circle.png",
+  name: "Kazeline Agency",
+  tagline: "Votre agence de voyage de confiance à Bujumbura.",
+  logo: "/logo-kazeline.png",
+  logoIncludesName: true,
   defaultCurrency: "USD",
   contact: {
     email: "",
@@ -68,15 +72,15 @@ export const siteConfig: SiteConfig = {
     whatsapp: "25761369539",
   },
   socials: {
-    instagram: "https://www.instagram.com/oasis_travel.agency/",
+    instagram: "https://www.instagram.com/kazeline_agency/",
   },
   theme: {
-    primary: "#2477B3", // Oasis blue
-    navy: "#123C5E", // deep blue — headings / dark bands
-    turquoise: "#38B6E0", // cyan — the OTRAV lettering
-    sunset: "#F2B138", // gold sun
-    sand: "#F1E7CE", // soft warm neutral
-    ocean: "#2477B3",
+    primary: "#E85D00", // Kazeline orange — buttons, links, primary UI
+    navy: "#1C1917", // warm near-black — headings / dark bands (was deep blue)
+    turquoise: "#FF7A1A", // bright orange — eyebrows / accents on dark
+    sunset: "#F59E1E", // amber — warm secondary accent
+    sand: "#FAF0E6", // warm linen — soft neutral background
+    ocean: "#F86000", // vivid logo orange — decorative fills / gradients
   },
   features: {
     wishlist: true,
@@ -98,6 +102,7 @@ export function themeStyle(theme: SiteTheme = siteConfig.theme): CSSProperties {
     "--accent": theme.turquoise,
     "--ring": theme.turquoise,
     "--secondary": theme.sand,
+    "--secondary-foreground": theme.navy,
     "--color-ocean": theme.ocean,
     "--color-navy": theme.navy,
     "--color-turquoise": theme.turquoise,

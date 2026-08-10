@@ -1,4 +1,4 @@
--- Azure Horizons — initial schema
+-- Kazeline Agency — initial schema
 -- Content tables use a single `i18n jsonb` column shaped { en: {...}, fr: {...} }
 -- for localized prose, mirroring src/lib/data/types.ts. Proper nouns stay as
 -- plain columns. User-owned tables reference auth.users.

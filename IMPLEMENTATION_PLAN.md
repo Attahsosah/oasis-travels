@@ -1,10 +1,10 @@
-# Azure Horizons — Luxury Travel Experience
+# Kazeline Agency — Luxury Travel Experience
 
 ## Implementation Plan (Planning Phase — awaiting approval before any code)
 
 **Locked decisions:** phased build in this workspace · live Supabase with typed mock fallback · sub-path i18n (`/en`, `/fr`) · Vercel deployment.
 
-Brand working name: **Azure Horizons**. Placeholder, trivially renameable via one config file.
+Brand working name: **Kazeline Agency**. Placeholder, trivially renameable via one config file.
 
 ---
 
@@ -46,7 +46,7 @@ Before the plan, the honest engineering read on the brief.
 ## 3. Folder Structure
 
 ```
-azure-horizons/
+kazeline-agency/
 ├─ src/
 │  ├─ app/
 │  │  ├─ [locale]/
@@ -276,7 +276,7 @@ Legend: S ≈ small, M ≈ moderate, L ≈ large, XL ≈ largest/highest-risk (4
 
 ## 19. What I Need From You To Go Live (not blocking the build)
 
-Supabase project URL + keys (Phase 7/8; local fallback until then), and any brand name/logo preference (defaults to *Azure Horizons*). Everything else proceeds on the plan above.
+Supabase project URL + keys (Phase 7/8; local fallback until then), and any brand name/logo preference (defaults to *Kazeline Agency*). Everything else proceeds on the plan above.
 
 ---
 

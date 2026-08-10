@@ -1,6 +1,6 @@
 # Supabase
 
-Schema, security, and seed for Azure Horizons. These files define the backend;
+Schema, security, and seed for Kazeline Agency. These files define the backend;
 they are **not** wired into the app yet — the Supabase client + adapter land in
 **Phase 8** (auth). Until `NEXT_PUBLIC_SUPABASE_URL` is set, the app runs on the
 local seed adapter (`src/lib/data/repository.ts`).

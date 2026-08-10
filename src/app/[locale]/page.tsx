@@ -25,7 +25,7 @@ import { isLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { JsonLd, faqLd, travelAgencyLd } from "@/lib/seo/json-ld";
 
-/** Oasis landing page — a full-service travel/ticketing agency in Bujumbura. */
+/** Kazeline Agency landing page — a full-service travel/ticketing agency in Bujumbura. */
 export default async function Home({
   params,
 }: {

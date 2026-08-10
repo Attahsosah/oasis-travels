@@ -1,4 +1,4 @@
--- Azure Horizons — seed content. Mirrors src/lib/data/seed.ts (single source of
+-- Kazeline Agency — seed content. Mirrors src/lib/data/seed.ts (single source of
 -- truth). Localized prose lives in `i18n` jsonb ({ en, fr }); dollar-quoting is
 -- used for the jsonb blobs so French apostrophes need no escaping.
 -- Image URLs are Unsplash CDN links.

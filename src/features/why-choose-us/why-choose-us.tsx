@@ -14,7 +14,7 @@ const VALUES: { key: string; icon: LucideIcon }[] = [
   { key: "expertise", icon: Award },
 ];
 
-/** Value proposition — why Azure Horizons. */
+/** Value proposition — why Kazeline Agency. */
 export async function WhyChooseUs({ locale }: { locale: Locale }) {
   const dict = await getDictionary(locale);
 

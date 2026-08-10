@@ -1,8 +1,8 @@
-# Azure Horizons
+# Kazeline Agency
 
 A cinematic luxury‑travel experience — bilingual marketing site, a procedural 3D hero, immersive page transitions, a full booking flow, wishlist, and Supabase‑ready auth. Built with Next.js 15 (App Router), React 19, TypeScript (strict), and Tailwind CSS v4.
 
-> **Brand name is a placeholder.** "Azure Horizons" appears in the dictionaries (`messages/*.json`) and a few components; it's trivially renameable.
+> **Brand name is a placeholder.** "Kazeline Agency" appears in the dictionaries (`messages/*.json`) and a few components; it's trivially renameable.
 
 ---
 

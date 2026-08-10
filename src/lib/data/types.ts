@@ -1,7 +1,7 @@
 import type { Locale } from "@/lib/i18n/config";
 
 /**
- * Content model for Azure Horizons.
+ * Content model for Kazeline Agency.
  *
  * Prose fields that differ per language are `Localized<string>` (`{ en, fr }`);
  * proper nouns (place names, brand names) stay single strings. This mirrors the
